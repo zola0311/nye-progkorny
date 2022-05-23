@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class CarsModel {
 
-    private int Id;
+    private String Id;
     private String Manufacturer;
     private String Type;
     private String FuelType;
@@ -12,7 +12,11 @@ public class CarsModel {
     private String Color;
     private String IsLending;
 
-    public CarsModel(int Id, String Manufacturer, String Type, String FuelType, String OdoMeter, String Color, String IsLending) {
+    public CarsModel() {
+
+    }
+
+    public CarsModel(String Id, String Manufacturer, String Type, String FuelType, String OdoMeter, String Color, String IsLending) {
         this.Id = Id;
         this.Manufacturer = Manufacturer;
         this.Type = Type;
@@ -22,11 +26,11 @@ public class CarsModel {
         this.IsLending = IsLending;
     }
 
-    public int getId() {
+    public String getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         Id = id;
     }
 
@@ -83,7 +87,7 @@ public class CarsModel {
         if (this == o) return true;
         if (!(o instanceof CarsModel)) return false;
         CarsModel carsModel = (CarsModel) o;
-        return Id == carsModel.Id && Manufacturer.equals(carsModel.Manufacturer) && Type.equals(carsModel.Type) && FuelType.equals(carsModel.FuelType) && OdoMeter.equals(carsModel.OdoMeter) && Color.equals(carsModel.Color) && IsLending.equals(carsModel.IsLending);
+        return Id.equals(carsModel.Id) && Manufacturer.equals(carsModel.Manufacturer) && Type.equals(carsModel.Type) && FuelType.equals(carsModel.FuelType) && OdoMeter.equals(carsModel.OdoMeter) && Color.equals(carsModel.Color) && IsLending.equals(carsModel.IsLending);
     }
 
     @Override
@@ -94,7 +98,7 @@ public class CarsModel {
     @Override
     public String toString() {
         return "CarsModel{" +
-                "Id=" + Id +
+                "Id='" + Id + '\'' +
                 ", Manufacturer='" + Manufacturer + '\'' +
                 ", Type='" + Type + '\'' +
                 ", FuelType='" + FuelType + '\'' +

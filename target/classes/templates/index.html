@@ -7,7 +7,7 @@
 <div th:insert="~{navbar :: navbar}"></div>
 <div class="container">
     <div class="mb-3" style="margin-top: 10px">
-        <a th:href="'/create'" th:object="${cars}" class="btn btn-success">Új jármű hozzáadása</a>
+        <a th:href="@{'/create'}" class="btn btn-success">Új jármű hozzáadása</a>
     </div>
 
     <table class="table">
@@ -31,8 +31,8 @@
             <td th:text="${car.OdoMeter}"></td>
             <td th:text="${car.Color}"></td>
             <td th:text="${car.IsLending}"></td>
-            <td><button class="btn btn-primary">Szerkesztés</button></td>
-            <td><button class="btn btn-danger">Törlés</button></td>
+            <td><a th:href="@{/edit/} + ${car.Id}" class="btn btn-primary">Szerkesztés</a></td>
+            <td><a th:href="@{/delete/} + ${car.Id}" class="btn btn-danger">Törlés</a></td>
         </tr>
         </tbody>
     </table>
