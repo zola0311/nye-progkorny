@@ -82,11 +82,11 @@ jobs:
       - name: Get image from packages, tag and push to Heroku
         run: |
           docker pull ghcr.io/zola0311/nye-progkorny:${{ env.ARTIFACT_VERSION }}
-          docker tag ghcr.io/zola0311/nye-progkorny:${{ env.ARTIFACT_VERSION }} registry.heroku.com/${{ env.HEROKU_APP_NAME }}/nye-progkorny
-          docker push registry.heroku.com/${{ env.HEROKU_APP_NAME }}/nye-progkorny
+          docker tag ghcr.io/zola0311/nye-progkorny:${{ env.ARTIFACT_VERSION }} registry.heroku.com/${{ env.HEROKU_APP_NAME }}/CarRental
+          docker push registry.heroku.com/${{ env.HEROKU_APP_NAME }}/CarRental
         env:
           ARTIFACT_VERSION: ${{ needs.build.outputs.artifactVersion }}
       - name: Release app on Heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a ${{ env.HEROKU_APP_NAME }} nye-progkorny
+        run: heroku container:release -a ${{ env.HEROKU_APP_NAME }} CarRental
