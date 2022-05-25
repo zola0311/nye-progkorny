@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>com.nye</groupId>
-	<artifactId>CarRental</artifactId>
+	<artifactId>carRental</artifactId>
 	<version>0.1.0</version>
 
 	<properties>

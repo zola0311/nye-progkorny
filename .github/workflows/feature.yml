@@ -40,7 +40,7 @@ jobs:
         # Overwrite local artifact version
         mvn -B versions:set -DnewVersion="$version" --file pom.xml
         mvn -B deploy --file pom.xml
-        cp "target/CarRental-${version}.jar" "target/CarRental.jar"
+        cp "target/carRental-${version}.jar" "target/carRental.jar"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Log in to the Container registry

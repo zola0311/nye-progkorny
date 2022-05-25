@@ -39,7 +39,7 @@ jobs:
         # Overwrite local artifact version
         mvn -B versions:set -DnewVersion="$version" --file pom.xml
         mvn -B deploy --file pom.xml
-        cp "target/CarRental-${version}.jar" "target/CarRental.jar"
+        cp "target/carRental-${version}.jar" "target/carRental.jar"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Log in to the Container registry
@@ -82,11 +82,11 @@ jobs:
       - name: Get image from packages, tag and push to Heroku
         run: |
           docker pull ghcr.io/zola0311/nye-progkorny:${{ env.ARTIFACT_VERSION }}
-          docker tag ghcr.io/zola0311/nye-progkorny:${{ env.ARTIFACT_VERSION }} registry.heroku.com/${{ env.HEROKU_APP_NAME }}/CarRental
-          docker push registry.heroku.com/${{ env.HEROKU_APP_NAME }}/CarRental
+          docker tag ghcr.io/zola0311/nye-progkorny:${{ env.ARTIFACT_VERSION }} registry.heroku.com/${{ env.HEROKU_APP_NAME }}/carRental
+          docker push registry.heroku.com/${{ env.HEROKU_APP_NAME }}/carRental
         env:
           ARTIFACT_VERSION: ${{ needs.build.outputs.artifactVersion }}
       - name: Release app on Heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a ${{ env.HEROKU_APP_NAME }} CarRental
+        run: heroku container:release -a ${{ env.HEROKU_APP_NAME }} carRental
