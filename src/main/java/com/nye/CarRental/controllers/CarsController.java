@@ -1,6 +1,6 @@
-package com.nye.CarRental.Cars.controllers;
+package com.nye.CarRental.controllers;
 
-import com.nye.CarRental.Cars.models.CarsModel;
+import com.nye.CarRental.models.CarsModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

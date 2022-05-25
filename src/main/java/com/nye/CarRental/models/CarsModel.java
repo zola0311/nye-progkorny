@@ -1,4 +1,4 @@
-package com.nye.CarRental.Cars.models;
+package com.nye.CarRental.models;
 
 import java.util.Objects;
 
