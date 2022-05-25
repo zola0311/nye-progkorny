@@ -12,8 +12,6 @@
 	<groupId>com.nye</groupId>
 	<artifactId>CarRental</artifactId>
 	<version>0.1.0</version>
-	<name>CarRental</name>
-	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>
